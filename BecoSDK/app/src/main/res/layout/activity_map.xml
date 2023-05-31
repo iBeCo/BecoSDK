@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.beco.sdk.map.BEMapFragment
+        android:id="@+id/beMap"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/theme_background"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <com.beco.sdktest.widget.BESearchBarView
+            android:id="@+id/beCoSearchBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <com.beco.sdktest.widget.BEMultiSearchView
+            android:id="@+id/beCoMultiSearchBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <com.beco.sdktest.widget.BEMultiRouteView
+            android:id="@+id/beCoMultiRouteView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </RelativeLayout>
+
+    <include layout="@layout/bottom_sheet_layout" />
+
+    <include layout="@layout/bottom_sheet_route_layout" />
+
+    <LinearLayout
+        android:id="@+id/llBottomButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        android:elevation="@dimen/twelve_p_five"
+        android:gravity="right"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/twelve_p_five"
+        android:paddingRight="@dimen/ninteen"
+        android:paddingBottom="@dimen/twelve_p_five"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/route_bottom_sheet_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_textview"
+            android:paddingLeft="@dimen/twelve_p_five"
+            android:paddingTop="@dimen/ten"
+            android:paddingRight="@dimen/twelve_p_five"
+            android:paddingBottom="@dimen/ten"
+            android:text="@string/cancel"
+            android:textColor="@color/blue" />
+
+        <TextView
+            android:id="@+id/btn_sheet_preview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/twelve_p_five"
+            android:background="@drawable/bg_textview"
+            android:drawableLeft="@drawable/ic_double_angle_pointing_to_right_blue"
+            android:drawablePadding="@dimen/ten"
+            android:paddingLeft="@dimen/twelve_p_five"
+            android:paddingTop="@dimen/ten"
+            android:paddingRight="@dimen/twelve_p_five"
+            android:paddingBottom="@dimen/ten"
+            android:text="@string/preview"
+            android:textColor="@color/blue"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/btn_sheet_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/twelve_p_five"
+            android:background="@drawable/bg_txt_fill"
+            android:visibility="visible">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/ten"
+                android:src="@drawable/start_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/five"
+                android:background="@drawable/bg_txt_fill"
+                android:paddingLeft="@dimen/five"
+                android:paddingTop="@dimen/ten"
+                android:paddingRight="@dimen/twelve_p_five"
+                android:paddingBottom="@dimen/ten"
+                android:text="@string/start"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

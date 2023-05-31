@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:id="@+id/cardview_add_places"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/eight"
+    android:layout_marginTop="@dimen/eight"
+    android:layout_marginRight="@dimen/eight"
+    android:layout_marginBottom="@dimen/fifteen"
+    android:visibility="gone"
+    app:cardCornerRadius="@dimen/twelve_p_five"
+    app:cardElevation="@dimen/five"
+    android:maxHeight="180dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="@dimen/twenty_seven"
+            android:layout_height="@dimen/twenty_seven"
+            android:layout_gravity="center"
+            android:gravity="left"
+            android:layout_marginTop="@dimen/fifteen"
+            android:layout_marginLeft="@dimen/eight"
+            android:layout_marginRight="@dimen/eight"
+
+            android:src="@drawable/back_icon" />
+        <com.beco.sdktest.utils.MaxHeightRecyclerView
+            android:id="@+id/rvStops"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/img_back"
+            android:orientation="vertical"
+            android:padding="4dp"/>
+        <ImageView
+            android:id="@+id/imgReverse"
+            android:layout_width="@dimen/forty_four"
+            android:layout_height="@dimen/forty_four"
+            android:background="@drawable/selectable_ripple"
+            android:layout_gravity="center"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/eight"
+            android:padding="@dimen/eight"
+            android:visibility="gone"
+            android:layout_marginRight="@dimen/eight"
+            android:src="@drawable/ic_swap_vert" />
+
+        <ImageView
+            android:id="@+id/imgAddStops"
+            android:layout_width="@dimen/forty_four"
+            android:layout_height="@dimen/forty_four"
+            android:background="@drawable/selectable_ripple"
+            android:layout_gravity="center"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/imgReverse"
+            android:visibility="gone"
+            android:layout_marginTop="4dp"
+            android:padding="@dimen/eight"
+            android:layout_marginRight="@dimen/eight"
+            android:src="@drawable/add_icon" />
+        <RelativeLayout
+            android:id="@+id/rel_total_dist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rvStops"
+            android:visibility="gone">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginEnd="0dp"
+                android:background="#c4c4c4" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/ninteen"
+                android:fontFamily="@font/raleway_semibold"
+                android:text="Total Trip - 20km"
+                android:textColor="@color/black"
+                android:textSize="@dimen/seventeen" />
+
+            <TextView
+                android:id="@+id/tvDone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/ninteen"
+                android:text="Done"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/seventeen" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardview_added_places"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/eight"
+    android:layout_marginTop="@dimen/eight"
+    android:layout_marginRight="@dimen/eight"
+    android:maxHeight="180dp"
+    android:visibility="gone"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="@dimen/twelve_p_five"
+    app:cardElevation="@dimen/five">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_back1"
+            android:layout_width="@dimen/twenty_seven"
+            android:layout_height="@dimen/twenty_seven"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/eight"
+            android:layout_marginTop="@dimen/twenty"
+            android:layout_marginRight="@dimen/eight"
+            android:gravity="left"
+
+            android:src="@drawable/back_icon" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/twelve_p_five"
+            android:layout_marginTop="@dimen/eight"
+            android:layout_marginRight="@dimen/twenty_seven"
+            android:layout_marginBottom="@dimen/twelve_p_five"
+            android:layout_toRightOf="@id/img_back1"
+            android:background="@drawable/grey_outline_bg"
+            android:paddingLeft="@dimen/fifteen"
+            android:paddingTop="@dimen/eight"
+            android:paddingRight="@dimen/twelve_p_five"
+            android:paddingBottom="@dimen/twelve_p_five">
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="0dp"
+                android:background="@color/lightGrey"
+                app:layout_constraintBottom_toTopOf="@id/imglocEnd"
+                app:layout_constraintLeft_toLeftOf="@id/imglocStart"
+                app:layout_constraintRight_toRightOf="@id/imglocStart"
+                app:layout_constraintTop_toTopOf="@id/imglocStart" />
+
+            <ImageView
+                android:id="@+id/imglocStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_current_loc"
+                app:layout_constraintBottom_toBottomOf="@id/tvLocStart"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/tvLocStart"
+                app:layout_constraintTop_toTopOf="@id/tvLocStart" />
+
+            <ImageView
+                android:id="@+id/imglocInter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_ellipse_90"
+                app:layout_constraintBottom_toBottomOf="@id/tvLocInter"
+                app:layout_constraintLeft_toLeftOf="@id/imglocStart"
+                app:layout_constraintRight_toRightOf="@id/imglocStart"
+                app:layout_constraintTop_toTopOf="@id/tvLocInter" />
+
+            <ImageView
+                android:id="@+id/imglocEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_marker_red"
+                app:layout_constraintBottom_toBottomOf="@id/tvLocEnd"
+                app:layout_constraintLeft_toLeftOf="@id/imglocStart"
+                app:layout_constraintRight_toRightOf="@id/imglocStart"
+                app:layout_constraintTop_toTopOf="@id/tvLocEnd" />
+
+            <TextView
+                android:id="@+id/tvLocStart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/twelve_p_five"
+                android:text="Current location"
+                android:textColor="@color/darkText"
+                app:layout_constraintBottom_toTopOf="@id/tvLocInter"
+                app:layout_constraintLeft_toRightOf="@id/imglocStart"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/tvLocInter"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/twelve_p_five"
+                android:layout_marginBottom="@dimen/twelve_p_five"
+                android:text="2 stops"
+                android:textColor="@color/darkText"
+                app:layout_constraintBottom_toTopOf="@id/tvLocEnd"
+                app:layout_constraintLeft_toLeftOf="@id/tvLocStart"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvLocStart" />
+
+            <TextView
+                android:id="@+id/tvLocEnd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/twelve_p_five"
+                android:layout_marginBottom="@dimen/twelve_p_five"
+                android:fontFamily="@font/raleway_semibold"
+                android:text="Destination"
+                android:textColor="@color/darkText"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="@id/tvLocStart"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvLocInter" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

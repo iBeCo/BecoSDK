@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">beCo Navigation</string>
+    <string name="your_route_covers_multiple_levels">Your route covers multiple levels</string>
+    <string name="_0">0</string>
+    <string name="_1">1</string>
+    <string name="start">Start</string>
+    <string name="cancel">Cancel</string>
+    <string name="go">Navigate</string>
+    <string name="close_icon">Close Icon</string>
+    <string name="search">Search</string>
+    <string name="pref_api_host_key">pref_api_host_key</string>
+    <string name="pref_api_host">Key</string>
+    <string name="default_v" />
+    <string name="pref_api_host_summary">SDK API KEY</string>
+    <string name="label_debug">Debug</string>
+    <string name="show_preview">Preview</string>
+    <string name="search_venue">Search a venue</string>
+    <string name="starting_point">Select Source</string>
+    <string name="destination">Select Destination</string>
+    <string name="search_icon">Search Icon</string>
+    <string name="where_to_go">Where to go ?</string>
+    <string name="dialog_name_title">Enter The Name</string>
+    <string name="dialog_remove_fav_title">Are You Sure?</string>
+    <string name="dialog_remove_fav_desc">Remove from favourites</string>
+    <string name="preview">Preview</string>
+    <string name="your_route_cover_multiple_routes">Your route cover multiple routes</string>
+</resources>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="#f3f4f6"
+    tools:context=".search.SearchActivity">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/linear_favorite"
+        android:layout_marginBottom="@dimen/five"
+        />
+
+    <RelativeLayout
+        android:id="@+id/rlSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/eight"
+        android:layout_marginTop="@dimen/eight"
+        android:layout_marginRight="@dimen/eight"
+        android:background="@drawable/edittext_bg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="@dimen/twenty_seven"
+            android:layout_height="@dimen/twenty_seven"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/ninteen"
+            android:src="@drawable/back_icon" />
+
+        <EditText
+            android:id="@+id/edt_search"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fifty_five"
+            android:layout_toLeftOf="@+id/img_mic"
+            android:layout_toRightOf="@+id/img_back"
+            android:background="@null"
+            android:fontFamily="@font/raleway_semibold"
+            android:hint="@string/where_to_go"
+            android:padding="@dimen/ten"
+            android:textColor="@color/black"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/img_mic"
+            android:layout_width="@dimen/twenty_seven"
+            android:layout_height="@dimen/twenty_seven"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/fifteen"
+            android:src="@drawable/mic_icon" />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linear_favorite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/twenty"
+        android:paddingRight="@dimen/twenty"
+        android:paddingTop="@dimen/sixteen"
+        android:paddingBottom="@dimen/sixteen"
+        android:layout_margin="@dimen/five"
+        android:background="@drawable/bg_cardtype_layout"
+        app:layout_constraintBottom_toTopOf="@id/tvRecentHeader"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rlSearch">
+
+        <ImageView
+            android:layout_width="@dimen/forty_four"
+            android:layout_height="@dimen/forty_four"
+            android:layout_marginStart="2dp"
+            android:padding="6dp"
+            android:alpha="1"
+            android:background="@drawable/bg_fav"
+            android:src="@drawable/fav_icon" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/twenty"
+            android:fontFamily="@font/raleway_semibold"
+            android:text="Favorites"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sixteen" />
+
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvRecentHeader"
+        app:layout_constraintBottom_toBottomOf="@id/rvHistory"
+        android:layout_marginLeft="@dimen/five"
+        android:layout_marginRight="@dimen/five"
+        android:layout_marginBottom="@dimen/five"
+        android:background="@drawable/bg_cardtype_layout"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Recent"
+        android:textAllCaps="true"
+        android:id="@+id/tvRecentHeader"
+        android:fontFamily="@font/raleway_semibold"
+        android:paddingTop="@dimen/twelve_p_five"
+        android:textSize="@dimen/twelve_p_five"
+        android:textColor="@color/black"
+        android:layout_marginLeft="@dimen/fifteen"
+        app:layout_constraintBottom_toTopOf="@id/rvHistory"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linear_favorite"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHistory"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingTop="@dimen/eight"
+        android:layout_marginLeft="@dimen/five"
+        android:layout_marginRight="@dimen/five"
+        android:layout_marginBottom="@dimen/five"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvRecentHeader" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_search"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/twelve_p_five"
+        android:visibility="gone"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rlSearch" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

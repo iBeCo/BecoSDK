@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:weightSum="6"
+    android:id="@+id/search_layout"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="6"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_maps_and_flags"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5">
+            <LinearLayout
+                android:id="@+id/llDetails"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/check_fav"
+                android:paddingTop="@dimen/twelve_p_five"
+                android:paddingBottom="@dimen/twelve_p_five"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/seventeen"
+                    android:id="@+id/txt_place"
+                    android:text="Room 102"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/raleway_semibold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/fourteen"
+                    android:text="Second Floor - 5000m"
+                    android:fontFamily="@font/raleway_medium"
+                    android:id="@+id/txt_detail"/>
+            </LinearLayout>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/llDetails"
+                android:background="@drawable/selectable_ripple"
+                android:id="@+id/check_fav"
+                android:padding="@dimen/eight"
+                android:layout_marginLeft="@dimen/twelve_p_five"
+                android:layout_marginRight="@dimen/twelve_p_five"
+                android:src="@drawable/star_unselected"
+
+                />
+            <View
+                android:id="@+id/view"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:background="@color/lightGrey"
+                app:layout_constraintLeft_toLeftOf="@id/llDetails"
+                app:layout_constraintRight_toRightOf="@id/check_fav"
+                app:layout_constraintTop_toBottomOf="@id/llDetails"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</LinearLayout>

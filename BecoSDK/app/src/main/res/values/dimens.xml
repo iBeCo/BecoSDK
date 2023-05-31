@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="eight">8dp</dimen>
+    <dimen name="five">5dp</dimen>
+    <dimen name="twenty_seven">27dp</dimen>
+    <dimen name="nineteen">19dp</dimen>
+    <dimen name="ten">10dp</dimen>
+    <dimen name="fifty_five">55dp</dimen>
+    <dimen name="thirty_five">35dp</dimen>
+    <dimen name="fifteen">15dp</dimen>
+    <dimen name="twenty">20dp</dimen>
+    <dimen name="twelve_p_five">12.5dp</dimen>
+    <dimen name="ninteen">19dp</dimen>
+    <dimen name="sixteen">16dp</dimen>
+    <dimen name="forty_four">44dp</dimen>
+    <dimen name="fourteen">14dp</dimen>
+    <dimen name="seventeen">17dp</dimen>
+
+</resources>

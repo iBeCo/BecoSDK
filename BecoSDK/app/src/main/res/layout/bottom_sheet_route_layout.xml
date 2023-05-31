@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/route_bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:elevation="@dimen/twelve_p_five"
+    android:background="@drawable/bottom_layout_bg"
+    android:orientation="vertical"
+    app:behavior_hideable="false"
+    android:visibility="gone"
+    app:behavior_peekHeight="200dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="5dp"
+        android:layout_marginTop="@dimen/five"
+        android:src="@drawable/bottomsheet_anchor"
+        android:layout_gravity="center"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/eight"
+        android:layout_marginLeft="@dimen/ninteen"
+        android:layout_marginRight="@dimen/ninteen"
+        android:layout_marginBottom="@dimen/ninteen"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_place_on_route"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/raleway_semibold"
+            android:textColor="@color/black"
+            android:textSize="@dimen/seventeen" />
+
+        <TextView
+            android:id="@+id/txt_detail_on_route"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_place_on_route"
+            android:fontFamily="@font/raleway_medium"
+            android:textSize="@dimen/fourteen" />
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:id="@+id/multiFloorDivider"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/ninteen"
+        android:layout_marginRight="@dimen/ninteen"
+        android:layout_marginBottom="@dimen/ninteen"
+        android:background="#ededed"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rvMultipleFloorLayout"
+        android:layout_marginLeft="@dimen/ninteen"
+        android:orientation="vertical"
+
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/raleway_medium"
+            android:text="@string/your_route_cover_multiple_routes"
+            android:textSize="@dimen/fourteen" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMultipleFloor"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="@dimen/ninteen"
+            android:orientation="horizontal"/>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="@dimen/twelve_p_five"
+        android:background="#ededed" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/ninteen"
+            android:layout_marginBottom="@dimen/twelve_p_five"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/btn_sheet_cancel2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_textview"
+                android:paddingLeft="@dimen/twelve_p_five"
+                android:paddingTop="@dimen/ten"
+                android:paddingRight="@dimen/twelve_p_five"
+                android:paddingBottom="@dimen/ten"
+                android:text="Cancel"
+                android:textColor="@color/blue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/twelve_p_five"
+                android:background="@drawable/bg_txt_fill"
+                android:drawableLeft="@drawable/ic_double_angle_pointing_to_right"
+                android:drawablePadding="@dimen/ten"
+                android:paddingLeft="@dimen/twelve_p_five"
+                android:paddingTop="@dimen/ten"
+                android:paddingRight="@dimen/twelve_p_five"
+                android:paddingBottom="@dimen/ten"
+                android:text="Preview"
+                android:textColor="@color/white"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/btn_sheet_directions2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/twelve_p_five"
+                android:background="@drawable/bg_txt_fill">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/ten"
+                    android:paddingLeft="10dp"
+                    android:src="@drawable/right_arrow" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/five"
+                    android:background="@drawable/bg_txt_fill"
+                    android:paddingLeft="@dimen/twelve_p_five"
+                    android:paddingTop="@dimen/ten"
+                    android:paddingRight="@dimen/twelve_p_five"
+                    android:paddingBottom="@dimen/ten"
+                    android:text="Directions"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>
