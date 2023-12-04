@@ -290,6 +290,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     private void initMap() {
         for (BESite site: beSiteList){
             if(site.getIdentifier().equals(SITE_ID)){
+                BEMapFragment.DEFAULT_FLOOR_INDEX = 4;    
                 beMapFragment.setSite(site);
                 beMapFragment.setOnPointClickListener(this);
                 beMapFragment.setOnCurrentLocationChangeListener(this);
