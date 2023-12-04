@@ -10,6 +10,6 @@ repositories {
 
 
 dependencies {
-    implementation 'com.beco:sdk:1.15'
+    implementation 'com.beco:sdk:1.18'
 }
 ```
