@@ -36,6 +36,8 @@ import com.beco.sdk.map.OnNavigationListener;
 import com.beco.sdk.map.OnPointClickListener;
 import com.beco.sdk.model.BEPoint;
 import com.beco.sdk.model.BESite;
+import com.beco.sdk.model.BEZone;
+import com.beco.sdk.model.BEZonePoints;
 import com.beco.sdktest.adapter.MultiFloorAdapter;
 import com.beco.sdktest.search.SearchActivity;
 import com.beco.sdktest.utils.LayoutUtils;
@@ -239,11 +241,23 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     public void onMapLoaded() {
         //Init your views here
         Log.d(TAG, "onMapLoaded");
+        App.getInstance().setPoints(getAllPoints());
+    }
+
+    public List<BEPoint> getAllPoints(){
         try {
-            App.getInstance().setPoints(beMapFragment.getPoints());
+            List<BEPoint> points = beMapFragment.getPoints();
+            if (!beMapFragment.getZonePoints().isEmpty()) {
+                for (BEZonePoints zone : beMapFragment.getZonePoints()) {
+                    points.addAll(zone.getZoneElements());
+                }
+            }
+            return points;
         } catch (SiteNotSetException e) {
             e.printStackTrace();
         }
+
+        return new ArrayList<>();
     }
 
     @Override
