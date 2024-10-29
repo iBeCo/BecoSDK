@@ -167,7 +167,9 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         LinearLayout bottomSheetRouteStart = findViewById(R.id.btn_sheet_start);
 
         bottomSheetRouteCancel.setOnClickListener(v -> {
+            App.getInstance().clearPoints();
             multiSearchBarView.clearAndHide();
+            multiSearchBarView.clearsearch();
             selectedRouteView.hide();
             onBackButtonClick();
         });
