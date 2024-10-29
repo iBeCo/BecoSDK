@@ -3,13 +3,16 @@ apply plugin: 'com.android.application'
 repositories {
     mavenLocal()
     maven {url "https://raw.githubusercontent.com/iBeCo/beco-android-sdk-release/release"}
+    maven {
+        url "https://repository.liferay.com/nexus/content/repositories/public/"
+    }
 }
 
 
 android {
     compileSdkVersion 29
     defaultConfig {
-        applicationId "com.beco.sdktest"
+        applicationId "io.proximety.hilitemall"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 2

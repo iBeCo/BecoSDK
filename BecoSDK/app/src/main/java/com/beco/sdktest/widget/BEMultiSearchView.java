@@ -146,6 +146,21 @@ public class BEMultiSearchView extends LinearLayout implements StopLocationAdapt
     public void visible(){
         multiSearchCard.setVisibility(VISIBLE);
     }
+    public void clearsearch(){
+        StopsItemModel model = null;
+//        if(mDataProvider.hasCurrentLocation()){
+//            model = mDataProvider.getCurrentLocation();
+//        }
+        mDataProvider.clearItems();
+//
+//        if(model != null){
+//            mDataProvider.addCurrentLocation(model);
+//        }else {
+            mDataProvider.addItemData(mDataProvider.getCount(), "Select Source", true, false);
+//        }
+        mStopLocationAdapter.notifyDataSetChanged();
+
+    }
 
     public void clear(){
         StopsItemModel model = null;
@@ -245,6 +260,16 @@ public class BEMultiSearchView extends LinearLayout implements StopLocationAdapt
         }
     }
 
+    public void restart() {
+        clear(); // Clear any existing data and reset the view
+        isInAddState = false; // Reset the add state flag
+        if (mDataProvider.getCount() == 0) {
+            // Add the initial source location item
+            mDataProvider.addItemData(mDataProvider.getCount(), "Select Source", true, false);
+        }
+        mStopLocationAdapter.notifyDataSetChanged(); // Refresh the adapter
+        multiSearchCard.setVisibility(VISIBLE); // Ensure the card view is visible
+    }
     @Override
     public void onClearItem(int position) {
         if (mDataProvider.getCount() == maximumLimit && !mDataProvider.containsEmptyStringItem()) {

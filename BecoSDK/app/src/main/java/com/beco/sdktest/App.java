@@ -91,5 +91,7 @@ public class App {
     public Gson getGson() {
         return mGson;
     }
-
+    public void clearPoints() {
+        points.clear();
+    }
 }

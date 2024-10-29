@@ -167,7 +167,9 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         LinearLayout bottomSheetRouteStart = findViewById(R.id.btn_sheet_start);
 
         bottomSheetRouteCancel.setOnClickListener(v -> {
+            App.getInstance().clearPoints();
             multiSearchBarView.clearAndHide();
+            multiSearchBarView.clearsearch();
             selectedRouteView.hide();
             onBackButtonClick();
         });
@@ -428,8 +430,22 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
     private void showRoute(BEPoint start, BEPoint end, List<BEPoint> wayPoints) {
         if (App.getInstance().getWayPointCount() >= 2) {
+            if (start == null || end == null) {
+                Log.e(TAG, "Start or end BEPoint is null");
+                return; // Handle appropriately, perhaps by showing an error message
+            }
+
+            if (wayPoints != null) {
+                for (BEPoint point : wayPoints) {
+                    if (point == null) {
+                        Log.e(TAG, "One of the intermediate waypoints is null");
+                        return; // Handle as needed
+                    }
+                }
+            }
+
             try {
-                floorModelList = beMapFragment.getRoute(start, end,wayPoints);
+                floorModelList = beMapFragment.getRoute(start, end, wayPoints);
                 if (floorModelList != null) {
                     Log.d(TAG, floorModelList.toString());
                     if (floorModelList.size() == 1) {
@@ -448,7 +464,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                     isRoutePlotted = true;
                     showBottomRouteSheet();
                 }
-
             } catch (InvalidRouteRequestException e) {
                 e.printStackTrace();
             }
@@ -563,7 +578,16 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         Log.d(TAG, "resetRouteRequest");
         beMapFragment.reset();
         App.getInstance().clearInterMediatePoints();
-        showRoute(App.getInstance().getWayPoint(0),App.getInstance().getWayPoint(1),null);
+
+        BEPoint startPoint = App.getInstance().getWayPoint(0);
+        BEPoint endPoint = App.getInstance().getWayPoint(1);
+
+        if (startPoint != null && endPoint != null) {
+            showRoute(startPoint, endPoint, null);
+        } else {
+            Log.e(TAG, "One or both waypoints are null");
+            // Optionally show an error message or take other appropriate action
+        }
     }
 
 
